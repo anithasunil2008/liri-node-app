@@ -64,11 +64,10 @@ function spotifyThis(value) {
     });
 }
 
-
 //movie function goes here
 function movie() {
 
-    var movieName = "Mr. Nobody";
+    var movieName = process.argv[3] || "Mr. Nobody";
     // request to the OMDB API with the movie specified
     var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=3d710c54";
 
