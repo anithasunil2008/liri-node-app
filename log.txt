@@ -18,4 +18,25 @@ Backported APIs include:
 * cypto.randomFi…Thank you to the team @gaviti_biz for sharing the app you made with #nodejs: Gaviti. Gaviti helps businesses get pa… https://t.co/omSHg5Dq2nRT @dshaw: 🌈🦄 Always Forward with dshaw: Node.js and the Web Platform
 With @dshaw @jasnell @jorydotcom @tzmanics LIVE in 1 hour.
 https://t.…RT @indexconf: Open collaboration is heightened when many different perspectives are included.
-Register for Index, join the community day,…RT @mhdawson1: Dedication. 24 people heading to Ottawa in the middle of winter to talk #nodejs Diagnostics. If you could not make but are i…RT @bmeurer: 🔥 Some awesome GC + Promise + async/await performance improvements coming your way for @NodeJS 10 (via @v8js). Also note that…
+Register for Index, join the community day,…RT @mhdawson1: Dedication. 24 people heading to Ottawa in the middle of winter to talk #nodejs Diagnostics. If you could not make but are i…RT @bmeurer: 🔥 Some awesome GC + Promise + async/await performance improvements coming your way for @NodeJS 10 (via @v8js). Also note that….@Indexconf is an open, developer community event happening in SF from Feb. 20 - 22 🌉
+
+We are hosting a community d… https://t.co/QVxxAmPKV7RT @the_jsf: Woot! Super saver tickets are all sold out for #JSInteractive. Still plenty of time to get early 🐤 pricing https://t.co/ARdF0A…Welcome! 🎉🎉🎉 https://t.co/hROmziCXX4Come join us in October for #JSInteractive 📅 The event is a great opportunity for you to learn best practices and t… https://t.co/PlUwNNljbxPSA: #nodejs 10.0.0 will contain first class support for fully promisified fs functions. More info here: https://t.co/fRtywm0JNvWhat is happening with the effort to internationalize #nodejs? @obensource provides an update on where we are at an… https://t.co/2HatpGAP1YWe’ll be having a special community meeting at #IndexConf (SF). Learn more here https://t.co/pxK426aQh3 and mark your calendars 📅RT @bitandbang: A truly immense amount of work goes into the @nodejs project. This month alone, there are 23 one-hour *public* meetings, li….@Indexconf is an open, developer community event happening in SF from Feb. 20 - 22 🌉
+
+We are hosting a community d… https://t.co/5v6GtZiKZlIn this blog post, @Daajust demystifies words like Buffer, Stream and binary data in Node.js ✨: https://t.co/fgUZLqWlFJRT @OpenAtWE: 📢 New announcement! 
+
+Microsoft for Startups provides startups with up to $120,000 in free Azure credits, enterprise grade te…Want a crash course on Serverless with #nodejs? Thanks @adnanrahic for providing it: https://t.co/l3NBwMhHZRRT @azatmardan: Stop using odd Node versions in production
+
+Node Versions: LTS vs. No LTS
+
+https://t.co/nwtqhzdrdo
+
+#100DaysOfCode 
+@nodejs…✨The #nodejs community committee is tasked with everything outward facing and related to the work that needs to be… https://t.co/A7judZX1Tc.@AvnerSo explains how he cut his #AWS bill by 90% going to serverless in this post https://t.co/JD2akTe6k2 cc: @freeCodeCampWe interviewed Uttam Pawar from @Intel for our How I Got Into #Node series. Check it out here: https://t.co/84ZvNDkAEr✨@CondeNastTech was in search of a means to unify its iconic brands on a single platform and create heightened cust… https://t.co/qmDElGD0vKRT @MylesBorins: 🎉🎉🎉🎉
+
+Happy @nodejs v6.x LTS Semver-Minor Day
+
+Backported APIs include:
+* console.count and console.clear
+* cypto.randomFi…Thank you to the team @gaviti_biz for sharing the app you made with #nodejs: Gaviti. Gaviti helps businesses get pa… https://t.co/omSHg5Dq2nRT @dshaw: 🌈🦄 Always Forward with dshaw: Node.js and the Web Platform
+With @dshaw @jasnell @jorydotcom @tzmanics LIVE in 1 hour.
+https://t.…

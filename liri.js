@@ -9,7 +9,7 @@ var Twitter = require('twitter');
 var spotify = new Spotify(keys.spotify);
 var client = new Twitter(keys.twitter);
 var action = process.argv[2];
-var movie = process.argv[3];
+var value = process.argv[3];
 
 //twitter function goes here
 function myTweets() {
@@ -33,34 +33,33 @@ function myTweets() {
 }
 
 //Spotify function goes here
-function spotifyThis() {
-    fs.readFile('./random.txt', 'utf8', function(error, dataInfo) {
-        if (error) {
-            return console.log("Error Occured");
+function spotifyThis(value) {
+    // fs.readFile('./random.txt', 'utf8', function(error, dataInfo) {
+    //     if (error) {
+    //         return console.log("Error Occured");
+    //     }
+
+    spotify.search({ type: 'track', query: value }, function(err, data) {
+        if (err) {
+            return console.log('Error occurred in spotify: ' + err);
         }
 
-        spotify.search({ type: 'track', query: dataInfo }, function(err, data) {
+        jsonBody = JSON.stringify(data);
+
+        console.log("================================ Song Information ====================================");
+        console.log(' ');
+        console.log('Artist: ' + data.tracks.items[0].artists[0].name);
+        console.log('Song: ' + data.tracks.items[0].name);
+        console.log('Preview Link: ' + data.tracks.items[0].preview_url);
+        console.log('Album: ' + data.tracks.items[0].album.name);
+        console.log(' ');
+        console.log("================================ Song Information Ends Here ====================================");
+
+        fs.writeFile("./temp.json", jsonBody, 'utf8', function(err) {
             if (err) {
-                return console.log('Error occurred in spotify: ' + err);
+                return console.log(err);
             }
-
-            jsonBody = JSON.stringify(data);
-
-            console.log("================================ Song Information ====================================");
-            console.log(' ');
-            console.log('Artist: ' + data.tracks.items[0].artists[0].name);
-            console.log('Song: ' + data.tracks.items[0].name);
-            console.log('Preview Link: ' + data.tracks.items[0].preview_url);
-            console.log('Album: ' + data.tracks.items[0].album.name);
-            console.log(' ');
-            console.log("================================ Song Information Ends Here ====================================");
-
-            fs.writeFile("./temp.json", jsonBody, 'utf8', function(err) {
-                if (err) {
-                    return console.log(err);
-                }
-                console.log("The file was saved!");
-            });
+            console.log("The file was saved!");
         });
     });
 }
@@ -102,7 +101,7 @@ function movie() {
 switch (action) {
 
     case 'spotify-this-song':
-        spotifyThis();
+        spotifyThis(value);
         break;
 
     case 'my-tweets':
@@ -111,6 +110,18 @@ switch (action) {
 
     case 'movie-this':
         movie();
+        break;
+
+    case 'do-what-it-says':
+        fs.readFile("./random.txt", 'utf-8', function(error, text) {
+            if (error) {
+                return console.log("Error Occured while reading random.txt : " + error);
+                process.exit(1);
+            }
+            var textByLine = text.split("\n");
+            var song = textByLine[Math.floor(Math.random() * textByLine.length)];
+            spotifyThis(song);
+        });
         break;
 
     default:
