@@ -34,12 +34,10 @@ function myTweets() {
 
 //Spotify function goes here
 function spotifyThis(value) {
-    // fs.readFile('./random.txt', 'utf8', function(error, dataInfo) {
-    //     if (error) {
-    //         return console.log("Error Occured");
-    //     }
 
-    spotify.search({ type: 'track', query: value }, function(err, data) {
+    var song = value || "The Sign";
+
+    spotify.search({ type: 'track', query: song }, function(err, data) {
         if (err) {
             return console.log('Error occurred in spotify: ' + err);
         }
@@ -59,7 +57,6 @@ function spotifyThis(value) {
             if (err) {
                 return console.log(err);
             }
-            console.log("The file was saved!");
         });
     });
 }
