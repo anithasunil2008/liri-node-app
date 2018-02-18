@@ -18,11 +18,13 @@ function myTweets() {
         if (error) {
             console.log('Error Occured in twitter: ' + error);
         }
-        console.log("================================ Twitter - Last 20 tweets ===========================");
+        console.log("================================== Twitter - Last 20 tweets ===================================");
+        console.log(" ");
+        console.log("Latest 20 Tweets");
         tweets.forEach(function(element, index) {
-            console.log("Tweet #" + index + " : " + element.text);
+            console.log("\nTweet #" + index + " : " + element.text);
 
-            fs.appendFile('log.txt', element.text, function(error) {
+            fs.appendFile('log.txt', "\nTweet #" + index + " : " + element.text, function(error) {
                 if (error) {
                     return console.log("Error Occured");
                 }
@@ -44,20 +46,20 @@ function spotifyThis(value) {
 
         jsonBody = JSON.stringify(data);
 
-        console.log("================================ Song Information ====================================");
-        console.log(' ');
-        console.log('Artist: ' + data.tracks.items[0].artists[0].name);
-        console.log('Song: ' + data.tracks.items[0].name);
-        console.log('Preview Link: ' + data.tracks.items[0].preview_url);
-        console.log('Album: ' + data.tracks.items[0].album.name);
-        console.log(' ');
-        console.log("================================ Song Information Ends Here ====================================");
+        var songMessage = "\n" + "\nSong Info" + "\n " + '\nArtist: ' + data.tracks.items[0].artists[0].name + '\nSong: ' + data.tracks.items[0].name +
+            '\nPreview Link: ' + data.tracks.items[0].preview_url + '\nAlbum: ' + data.tracks.items[0].album.name;
 
-        fs.writeFile("./temp.json", jsonBody, 'utf8', function(err) {
-            if (err) {
-                return console.log(err);
+        fs.appendFile('log.txt', songMessage, function(error) {
+            if (error) {
+                return console.log("Error Occured");
             }
         });
+
+        console.log("================================ Song Info ====================================");
+        console.log(' ');
+        console.log(songMessage);
+        console.log(' ');
+        console.log("================================ Song Info ====================================");
     });
 }
 
@@ -74,22 +76,25 @@ function movie() {
 
     request(queryUrl, function(error, response, body) {
 
+        var movieMessage = "\nMovie Info" + "\n " + "\nTitle of the movie: " + movieName + " \nYear the movie came out: " + JSON.parse(body).Released +
+            " \nIMDB Rating of the movie: " + JSON.parse(body).imdbRating + " \nRotten Tomatoes Rating of the movie: " + JSON.parse(body).Ratings[1].Value +
+            " \nCountry where the movie was produced: " + JSON.parse(body).Country + " \nLanguage of the movie: " + JSON.parse(body).Language +
+            " \nPlot of the movie: " + JSON.parse(body).Plot + " \nActors in the movie: " + JSON.parse(body).Actors;
+
+        fs.appendFile('log.txt', movieMessage, function(error) {
+            if (error) {
+                return console.log("Error Occured");
+            }
+        });
+
         // If the request is successful (i.e. if the response status code is 200)
         if (!error && response.statusCode === 200) {
 
-            console.log("================================ Movie Information ====================================");
+            console.log("================================ Movie ====================================");
             console.log(' ');
-            console.log("Title of the movie: " + movieName);
-            console.log("Year the movie came out: " + JSON.parse(body).Released);
-            console.log("IMDB Rating of the movie: " + JSON.parse(body).imdbRating);
-            console.log("Rotten Tomatoes Rating of the movie: " + JSON.parse(body).Ratings[1].Value);
-            console.log("Country where the movie was produced: " + JSON.parse(body).Country);
-            console.log("Language of the movie: " + JSON.parse(body).Language);
-            console.log("Plot of the movie: " + JSON.parse(body).Plot);
-            console.log("Actors in the movie: " + JSON.parse(body).Actors);
+            console.log(movieMessage);
             console.log(' ');
-            console.log("================================ Movie Information Ends Here ====================================");
-
+            console.log("================================ Movie Info ====================================");
         }
     });
 }
